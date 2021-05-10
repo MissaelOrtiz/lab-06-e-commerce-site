@@ -136,3 +136,7 @@ footer {
     margin: 20px;
     background-color: hsla(48, 83%, 89%, .7);
 }
+
+button {
+    margin-left: 10px;
+}
