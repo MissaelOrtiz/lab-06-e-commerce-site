@@ -11,7 +11,7 @@ test('renders an item', assert => {
     const potionOfHealing = {
         id: 'potionOfHealing',
         name: 'Potion of Healing',
-        image: 'potionofhealing.png',
+        image: 'potionOfHealing.png',
         description: 'Tastes like cherry!',
         category: 'potion',
         price: 5
