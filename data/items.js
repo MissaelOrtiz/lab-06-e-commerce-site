@@ -25,4 +25,6 @@ const armorOfTheSea = {
     price: 80
 };
 
-export const items = [potionOfHealing, flametongue, armorOfTheSea];
+const items = [potionOfHealing, flametongue, armorOfTheSea];
+
+export default items;
