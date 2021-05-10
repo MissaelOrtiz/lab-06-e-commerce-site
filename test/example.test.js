@@ -27,3 +27,24 @@ test('renders an item', assert => {
     assert.equal(html, expected);
 });
 
+test('renders an item', assert => {
+    // arrange
+    const flametongue = {
+        id: 'flametongue',
+        name: 'Flametongue',
+        image: 'flametongue.png',
+        description: 'Both hot and sharp!',
+        category: 'weapon',
+        price: 35
+    };
+    
+    const expected = '<li class="weapon" title="Both hot and sharp!"><h3>Flametongue</h3><img src="../assets/flametongue.png" alt="Flametongue image"><p class="price">35 gold pieces<button value="flametongue">add</button></p></li>';
+    
+    // act
+    const dom = renderItems(flametongue);
+    const html = dom.outerHTML;
+    
+    // assert
+    assert.equal(html, expected);
+});
+

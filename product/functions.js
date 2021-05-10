@@ -4,6 +4,7 @@ export default { renderItems };
 export function renderItems(item) {
     const li = document.createElement('li');
     li.classList.add(item.category);
+    li.classList.add('item');
     li.title = item.description;
 
     const h3 = document.createElement('h3');
@@ -13,6 +14,7 @@ export function renderItems(item) {
     const img = document.createElement('img');
     img.src = `../assets/${item.image}`;
     img.alt = `${item.name} image`;
+    img.classList.add('sellingimg');
     li.appendChild(img);
 
     const p = document.createElement('p');
