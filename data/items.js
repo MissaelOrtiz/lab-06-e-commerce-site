@@ -25,6 +25,33 @@ const armorOfTheSea = {
     price: 80
 };
 
-const items = [potionOfHealing, flametongue, armorOfTheSea];
+const luckyCoin = {
+    id: 'luckyCoin',
+    name: 'Lucky Coin',
+    image: 'luckycoin.png',
+    description: 'Always lands heads up!',
+    category: 'misc',
+    price: 20
+};
+
+const potionOfWaterBreathing = {
+    id: 'potionOfWaterBreathing',
+    name: 'Potion of Water Breathing',
+    image: 'potionofwaterbreathing.png',
+    description: 'Lets you breathe water!',
+    category: 'potion',
+    price: 25
+};
+
+const abyssalIdol = {
+    id: 'abyssalIdol',
+    name: 'Abyssal Idol',
+    image: 'abyssalidol.png',
+    description: 'What the heck? How did that get here.',
+    category: 'misc',
+    price: 1200
+};
+
+const items = [potionOfHealing, flametongue, armorOfTheSea, luckyCoin, potionOfWaterBreathing, abyssalIdol];
 
 export default items;
