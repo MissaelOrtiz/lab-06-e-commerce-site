@@ -2,7 +2,7 @@ const potionOfHealing = {
     id: 'potionOfHealing',
     name: 'Potion of Healing',
     image: 'potionofhealing.png',
-    description: 'Taste like cherry!',
+    description: 'Tastes like cherry!',
     category: 'potion',
     price: 5
 };

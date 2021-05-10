@@ -1,18 +1,29 @@
 // IMPORT MODULES under test here:
+import { renderItems } from '../product/functions.js';
 // import { example } from '../example.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true;
+QUnit.module('Render Item');
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+test('renders an item', assert => {
+    // arrange
+    const potionOfHealing = {
+        id: 'potionOfHealing',
+        name: 'Potion of Healing',
+        image: 'potionofhealing.png',
+        description: 'Tastes like cherry!',
+        category: 'potion',
+        price: 5
+    };
+    
+    const expected = '<li class="potion" title="Tastes like cherry!"><h3>Potion of Healing</h3><img src="../assets/potionofhealing.png" alt="Potion of Healing image"><p class="price">5 gold pieces<button value="potionOfHealing">add</button></p></li>';
+    
+    // act
+    const dom = renderItems(potionOfHealing);
+    const html = dom.outerHTML;
+    
+    // assert
+    assert.equal(html, expected);
 });
+

@@ -1,7 +1,7 @@
-export default renderItems;
+export default { renderItems };
 
 
-function renderItems(item) {
+export function renderItems(item) {
     const li = document.createElement('li');
     li.classList.add(item.category);
     li.title = item.description;

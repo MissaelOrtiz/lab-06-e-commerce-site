@@ -1,5 +1,5 @@
 import items from '../data/items.js';
-import renderItems from './functions.js';
+import { renderItems } from './functions.js';
 
 const displayItemList = document.getElementById('item-list');
 
