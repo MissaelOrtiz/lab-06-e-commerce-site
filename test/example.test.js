@@ -2,12 +2,13 @@
 import { renderItems } from '../product/functions.js';
 import { renderCartItem } from '../cart/render-cart.js';
 import { getById } from '../cart/render-cart.js';
+import { getCartTotal } from '../cart/render-cart.js';
 // import { example } from '../example.js';
 
 const test = QUnit.test;
 
-QUnit.module('Render Item');
-
+QUnit.module('Lots of tests');
+// These tests cover the renderItems function
 test('renders an item', assert => {
     // arrange
     const potionOfHealing = {
@@ -50,29 +51,8 @@ test('renders an item', assert => {
     assert.equal(html, expected);
 });
 
-test('renders a cart item', assert => {
-    // arrange
-    const potionOfHealing = {
-        id: 'potionOfHealing',
-        name: 'Potion of Healing',
-        image: 'potionOfHealing.png',
-        description: 'Tastes like cherry!',
-        category: 'potion',
-        price: 5
-    };
-    
-    const expected = '<tr><td>Potion of Healing</td><td>1</td><td>5 gold pieces</td><td>5 gold pieces</td></tr>';
-    
-    // act
-    const dom = renderCartItem(potionOfHealing);
-    const html = dom.outerHTML;
-    
-    // assert
-    assert.equal(html, expected);
-});
-
+// this tests the getById function
 test('compares an id to an array of object.ids and returns the object if a match is found', assert => {
-    // arrange
     const someArray = [
         { id:1, name: 'thing 1' },
         { id:2, name: 'thing 2' }
@@ -83,9 +63,35 @@ test('compares an id to an array of object.ids and returns the object if a match
         name: 'thing 2' 
     };
     
-    // act
     const actual = getById(someArray, 2);
     
-    // assert
     assert.deepEqual(actual, expected);
+});
+
+
+// this tests the getCartTotal function
+test('', assert => {
+    const someArray2 = [{ id:1, quantity:5 }, { id:2, quantity:0 }];
+    const expected = 25;
+    
+    const actual = getCartTotal(someArray2);
+    
+    assert.equal(actual, expected);
+});
+
+// this tests the renderCartItem function
+test('renders a cart item', assert => {
+    // arrange
+    const potionOfHealing = {
+        id: 1,
+        quantity: 1
+    };
+    
+    const expected = '<tr><td>Potion of Healing</td><td>1</td><td>5 gold pieces</td><td>5 gold pieces</td></tr>';
+    
+    // act
+    const something = renderCartItem(potionOfHealing);
+    const HTML = something.outerHTML;
+    // assert
+    assert.equal(HTML, expected);
 });

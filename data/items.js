@@ -1,5 +1,5 @@
 const potionOfHealing = {
-    id: 'potionOfHealing',
+    id: 1,
     name: 'Potion of Healing',
     image: 'potionOfHealing.png',
     description: 'Tastes like cherry!',
@@ -8,7 +8,7 @@ const potionOfHealing = {
 };
 
 const flametongue = {
-    id: 'flametongue',
+    id: 2,
     name: 'Flametongue',
     image: 'flametongue.png',
     description: 'Both hot and sharp!',
@@ -17,7 +17,7 @@ const flametongue = {
 };
 
 const armorOfTheSea = {
-    id: 'armorOfTheSea',
+    id: 3,
     name: 'Armor of the Sea',
     image: 'armorofthesea.png',
     description: 'Constantly smells of the sea; will leave you damp.',
@@ -26,7 +26,7 @@ const armorOfTheSea = {
 };
 
 const luckyCoin = {
-    id: 'luckyCoin',
+    id: 4,
     name: 'Lucky Coin',
     image: 'luckycoin.png',
     description: 'Always lands heads up!',
@@ -35,7 +35,7 @@ const luckyCoin = {
 };
 
 const potionOfWaterBreathing = {
-    id: 'potionOfWaterBreathing',
+    id: 5,
     name: 'Potion of Water Breathing',
     image: 'potionofwaterbreathing.png',
     description: 'Lets you breathe water!',
@@ -44,7 +44,7 @@ const potionOfWaterBreathing = {
 };
 
 const abyssalIdol = {
-    id: 'abyssalIdol',
+    id: 6,
     name: 'Abyssal Idol',
     image: 'abyssalidol.png',
     description: 'What the heck? How did that get here.',
@@ -52,6 +52,6 @@ const abyssalIdol = {
     price: 1200
 };
 
-const items = [potionOfHealing, flametongue, armorOfTheSea, luckyCoin, potionOfWaterBreathing, abyssalIdol];
+const magicItemsList = [potionOfHealing, flametongue, armorOfTheSea, luckyCoin, potionOfWaterBreathing, abyssalIdol];
 
-export default items;
+export default magicItemsList;

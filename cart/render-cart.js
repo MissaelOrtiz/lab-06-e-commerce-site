@@ -1,5 +1,4 @@
-import items from '../data/items.js';
-import cartItems from '../data/cart-items.js';
+import magicItemsList from '../data/items.js';
 
 
 export function getById(anArray, ID) {
@@ -13,7 +12,7 @@ export function getById(anArray, ID) {
 
 export function renderCartItem(cartItem) {
     // setting constants
-    const item = getById(items, cartItem.id);
+    const magicItem = getById(magicItemsList, cartItem.id);
     // creating dom elements to display data
     const tr = document.createElement('tr');
     const nameTd = document.createElement('td');
@@ -21,23 +20,23 @@ export function renderCartItem(cartItem) {
     const priceTd = document.createElement('td');
     const totalTd = document.createElement('td');
     // populating dom elements with data
-    nameTd.textContent = item.name;
+    nameTd.textContent = magicItem.name;
     quantityTd.textContent = cartItem.quantity;
-    priceTd.textContent = item.price;
-    const total = `${item.price * cartItem.quantity} gold pieces`;
-    totalTd.textContent = total;
+    priceTd.textContent = `${magicItem.price} gold pieces`;
+    const total = magicItem.price * cartItem.quantity;
+    totalTd.textContent = `${total} gold pieces`;
     // appending data
     tr.append(nameTd, quantityTd, priceTd, totalTd);
     return tr;
 }
 
-export function getCartTotal() {
+export function getCartTotal(arr) {
     let accumulator = 0;
 
-    for (let item of cartItems) {
-        const feltAnimal = getById(cartItems, item.id);
+    for (let item of arr) {
+        const memItems = getById(magicItemsList, item.id);
 
-        const total = item.quantity * feltAnimal.price;
+        const total = item.quantity * memItems.price;
 
         accumulator = accumulator + total;
     }
