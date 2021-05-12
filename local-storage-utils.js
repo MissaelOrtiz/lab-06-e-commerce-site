@@ -1,11 +1,12 @@
 import { getById } from './cart/render-cart.js';
 
 // Needs to be able to create an item and modify it (add stuff to it later)
+// This function will be a tool for 'unzipping' localstorage data into a usable form.
 export function getCart() {
     // Local storage needs a key, and it needs to be set to a string.
-    const stringyCart = localStorage.getItem('CART');
+    const stringyCartGet = localStorage.getItem('CART');
     // Local storage can only take strings, so this needs to be converted into a string
-    const parsedCart = JSON.parse(stringyCart);
+    const parsedCart = JSON.parse(stringyCartGet);
     // Check to see if there is a real cart,
     if (parsedCart) {
         // If the cart exists, return it
@@ -16,11 +17,12 @@ export function getCart() {
     }
 }
 
+// This function will be a tool for 'zipping' modified/altered cart data into and sending it back to localstorage.
 export function setCart(someCart) {
     // pass in an array and make sure that array is turned into a string
-    const stringyCart = JSON.stringify(someCart);
+    const stringyCartSet = JSON.stringify(someCart);
     // pass in that stringy array into setItem
-    localStorage.setItem('CART', stringyCart);
+    localStorage.setItem('CART', stringyCartSet);
 }
 
 export function addItemToCart(itemId) {

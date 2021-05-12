@@ -5,6 +5,8 @@ const cartItems = getCart();
 
 const anchor = document.querySelector('tbody');
 const total = document.getElementById('total');
+const buttonReset = document.getElementById('cart-reset-button');
+const buttonPlaceOrder = document.getElementById('place-order-button');
 
 for (let item of cartItems) {
     const tableRow = renderCartItem(item);
@@ -15,3 +17,11 @@ for (let item of cartItems) {
 const totalPrice = getCartTotal(cartItems);
 
 total.textContent = totalPrice;
+
+buttonPlaceOrder.addEventListener('click', () => {
+    localStorage.clear();
+});
+
+buttonReset.addEventListener('click', () => {
+    localStorage.clear();
+});

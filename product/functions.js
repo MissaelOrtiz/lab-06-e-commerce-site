@@ -28,6 +28,7 @@ export function renderItems(item) {
     button.value = item.id;
     button.addEventListener ('click', () => {
         addItemToCart(item.id);
+        alert(`You have added ${item.name} item to your cart`);
     });
     p.appendChild(button);
 
