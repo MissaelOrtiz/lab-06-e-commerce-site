@@ -3,6 +3,7 @@ import { renderItems } from '../product/functions.js';
 import { renderCartItem } from '../cart/render-cart.js';
 import { getById } from '../cart/render-cart.js';
 import { getCartTotal } from '../cart/render-cart.js';
+import { setCart } from '../local-storage-utils.js';
 // import { example } from '../example.js';
 
 const test = QUnit.test;
@@ -94,4 +95,46 @@ test('renders a cart item', assert => {
     const HTML = something.outerHTML;
     // assert
     assert.equal(HTML, expected);
+});
+
+test('setCart should create an array in localstorage and that is stored with the key of CART', assert => {
+    // arrange
+    const items = [
+        {
+            id: 1
+        },
+        {
+            id: 2
+        }
+    ];
+
+    setCart(items);
+    // act
+    const stringyItems = localStorage.getItem('CART');
+    const parsedItem = JSON.parse(stringyItems);
+    
+    // assert
+    assert.deepEqual(items, parsedItem);
+});
+
+test('getCart should get an array in localstorage and that is parsed (that is created by setCart)', assert => {
+    // arrange
+    const items = [
+        {
+            id: 1
+        },
+        {
+            id: 2
+        }
+    ];
+
+    const stringyItems = JSON.stringify(items);
+    localStorage.setItem('CART', stringyItems);
+    setCart(items);
+    // act
+    const stringyItems2 = localStorage.getItem('CART');
+    const parsedItem = JSON.parse(stringyItems2);
+    
+    // assert
+    assert.deepEqual(items, parsedItem);
 });

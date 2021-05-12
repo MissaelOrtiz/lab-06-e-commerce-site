@@ -1,3 +1,5 @@
+import { addItemToCart } from '../local-storage-utils.js';
+
 export default { renderItems };
 
 
@@ -24,6 +26,9 @@ export function renderItems(item) {
     const button = document.createElement('button');
     button.textContent = 'add';
     button.value = item.id;
+    button.addEventListener ('click', () => {
+        addItemToCart(item.id);
+    });
     p.appendChild(button);
 
     li.appendChild(p);

@@ -1,5 +1,7 @@
 import { renderCartItem, getCartTotal } from '../cart/render-cart.js';
-import { cartItems } from '../data/cart-items.js';
+// import { cartItems } from '../data/cart-items.js';
+import { getCart } from '../local-storage-utils.js';
+const cartItems = getCart();
 
 const anchor = document.querySelector('tbody');
 const total = document.getElementById('total');
