@@ -19,9 +19,14 @@ const totalPrice = getCartTotal(cartItems);
 total.textContent = totalPrice;
 
 buttonPlaceOrder.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.removeItem('CART');
+    window.location.replace('../index.html');
+    // document.location.href = '../';
+
 });
 
 buttonReset.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.removeItem('CART');
+    window.location.replace('../product/index.html');
+
 });
